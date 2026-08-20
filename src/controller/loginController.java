@@ -1,9 +1,12 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class loginController {
 
@@ -22,13 +25,32 @@ public class loginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if(username.equals("admin") && password.equals("1234"))
-        {
-            messageLabel.setText("Login Successful");
+        try {
+
+            if(username.equals("admin") && password.equals("1234"))
+            {
+                FXMLLoader loader =
+                        new FXMLLoader(getClass().getResource("/view/dashboard.fxml"));
+
+                Scene scene = new Scene(loader.load());
+
+                Stage stage =
+                        (Stage) usernameField.getScene().getWindow();
+
+                stage.setScene(scene);
+                stage.setMaximized(true);
+                stage.show();
+            }
+            else
+            {
+                messageLabel.setText("Invalid Username or Password");
+            }
+
         }
-        else
+        catch (Exception e)
         {
-            messageLabel.setText("Invalid Username or Password");
+            e.printStackTrace();
+            messageLabel.setText("Failed to open dashboard");
         }
     }
 }

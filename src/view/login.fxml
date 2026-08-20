@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="title-label" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loginController">
+<AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="title-label" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loginController">
    <children>
       <ImageView fx:id="logoImageView" fitHeight="132.0" fitWidth="132.0" layoutX="141.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,7 +24,7 @@
          </font>
       </TextField>
       <PasswordField fx:id="passwordField" layoutX="99.0" layoutY="298.0" prefHeight="31.0" prefWidth="202.0" promptText="Password" styleClass="password-field" />
-      <Button fx:id="loginButton" layoutX="139.0" layoutY="356.0" mnemonicParsing="false" onAction="#login" prefHeight="0.0" prefWidth="122.0" styleClass="login-button" text="Login" textFill="WHITE" />
+      <Button fx:id="loginButton" defaultButton="true" layoutX="139.0" layoutY="356.0" mnemonicParsing="false" onAction="#login" prefHeight="0.0" prefWidth="122.0" styleClass="login-button" text="Login" textFill="WHITE" />
       <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="399.0" prefHeight="40.0" prefWidth="400.0" textAlignment="CENTER">
          <font>
             <Font size="11.0" />
