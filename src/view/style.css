@@ -27,3 +27,12 @@
 .login-button:hover{
     -fx-background-color: #4E342E;
 }
+.sidebar-button {
+    -fx-background-color: #6F4E37;
+    -fx-text-fill: white;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #2D1B14;
+    -fx-cursor: hand;
+}

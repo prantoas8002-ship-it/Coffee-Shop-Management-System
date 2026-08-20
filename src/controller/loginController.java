@@ -38,7 +38,11 @@ public class loginController {
                         (Stage) usernameField.getScene().getWindow();
 
                 stage.setScene(scene);
-                stage.setMaximized(true);
+                stage.setWidth(900);
+                stage.setHeight(700);
+                stage.centerOnScreen();
+
+//                stage.setMaximized(true);
                 stage.show();
             }
             else
