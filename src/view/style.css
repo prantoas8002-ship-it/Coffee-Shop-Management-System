@@ -1,0 +1,29 @@
+.root{
+    -fx-background-color: #FAF3E0;
+}
+
+.title-label{
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4E342E;
+}
+
+.text-field,
+.password-field{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #6F4E37;
+    -fx-font-size: 14px;
+}
+
+.login-button{
+    -fx-background-color: #6F4E37;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+}
+
+.login-button:hover{
+    -fx-background-color: #4E342E;
+}
