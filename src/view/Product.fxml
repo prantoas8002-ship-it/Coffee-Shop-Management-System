@@ -8,59 +8,134 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="600.0"
+            prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.productController">
+
    <top>
-      <HBox prefHeight="70.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #4B2E2B; -fx-padding: 20;" BorderPane.alignment="CENTER">
+      <HBox spacing="10"
+            style="-fx-background-color: #4B2E2B; -fx-padding: 20;">
          <children>
             <Label text="Products" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="28.0" />
+                  <Font name="System Bold" size="28.0"/>
                </font>
             </Label>
          </children>
       </HBox>
    </top>
+
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+
+      <HBox spacing="20">
+
          <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            <Insets top="20" right="20" bottom="20" left="20"/>
          </padding>
+
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+
                <children>
-                  <Label text="Products view">
+
+                  <Label text="Products View">
                      <font>
-                        <Font name="System Bold Italic" size="20.0" />
+                        <Font name="System Bold Italic" size="20.0"/>
                      </font>
                   </Label>
-                  <TableView fx:id="productTable" prefHeight="500.0" prefWidth="200.0">
+
+                  <TableView fx:id="productTable"
+                             stylesheets="@products.css"
+                             VBox.vgrow="ALWAYS">
+
                      <columns>
-                        <TableColumn fx:id="idColumn" prefWidth="87.20001411437988" text="ID" />
-                        <TableColumn fx:id="nameColumn" prefWidth="183.1999740600586" text="NAME" />
-                        <TableColumn fx:id="priceColumn" prefWidth="158.4000244140625" text="PRICE" />
-                        <TableColumn fx:id="stockColumn" prefWidth="164.80007934570312" text="STOCK" />
+
+                        <TableColumn fx:id="slColumn"
+                                     text="SL"
+                                     prefWidth="60"/>
+
+                        <TableColumn fx:id="nameColumn"
+                                     text="NAME"
+                                     prefWidth="200"/>
+
+                        <TableColumn fx:id="priceColumn"
+                                     text="PRICE"
+                                     prefWidth="120"/>
+
+                        <TableColumn fx:id="stockColumn"
+                                     text="STOCK"
+                                     prefWidth="120"/>
+
                      </columns>
+
                   </TableView>
+
                </children>
+
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="250.0" spacing="15.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-color: lightgray; -fx-border-radius: 10;">
+
+            <VBox prefWidth="260"
+                  minWidth="260"
+                  maxWidth="260"
+                  spacing="15"
+                  style="-fx-background-color: white;
+                             -fx-padding: 20;
+                             -fx-background-radius: 10;
+                             -fx-border-color: lightgray;
+                             -fx-border-radius: 10;">
+
                <children>
+
                   <Label text="Add Products">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="18"/>
                      </font>
                   </Label>
-                  <TextField fx:id="nameField" promptText="Product name" />
-                  <TextField fx:id="priceField" promptText="Price" />
-                  <TextField fx:id="stockField" promptText="Stock" />
-                  <Button fx:id="addBtn" alignment="CENTER" mnemonicParsing="false" prefWidth="210.0" text="Add Products" />
-                  <Button fx:id="clrBtn" alignment="CENTER" mnemonicParsing="false" prefWidth="210.0" text="Clear" />
+
+                  <TextField fx:id="nameField"
+                             promptText="Product Name"/>
+
+                  <TextField fx:id="priceField"
+                             promptText="Price"/>
+
+                  <TextField fx:id="stockField"
+                             promptText="Stock"/>
+
+                  <Button fx:id="addBtn"
+                          prefWidth="220"
+                          text="Add Product"
+                          onAction="#addProduct"/>
+
+                  <Button fx:id="updateBtn"
+                          prefWidth="220"
+                          text="Update Product"
+                          onAction="#updateProduct"/>
+
+                  <Button fx:id="dltBtn"
+                          prefWidth="220"
+                          text="Delete Product"
+                          onAction="#deleteProduct"/>
+
+                  <Button fx:id="clrBtn"
+                          prefWidth="220"
+                          text="Clear"
+                          onAction="#clearFields"/>
+
                </children>
+
             </VBox>
+
          </children>
+
       </HBox>
+
    </center>
+
 </BorderPane>

@@ -17,7 +17,7 @@ public class Main extends Application {
             System.out.println("Connected");
         }
 
-        DBconnection.getProducts();
+        //DBconnection.getProducts();
 
         FXMLLoader loader =
                 new FXMLLoader(getClass().getResource("/view/login.fxml"));
