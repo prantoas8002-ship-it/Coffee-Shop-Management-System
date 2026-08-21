@@ -1,16 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
-   <children>
-      <Label layoutX="211.0" layoutY="128.0" text="Products page" textFill="RED">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="70.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #4B2E2B; -fx-padding: 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Products" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Products view">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="productTable" prefHeight="500.0" prefWidth="200.0">
+                     <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="87.20001411437988" text="ID" />
+                        <TableColumn fx:id="nameColumn" prefWidth="183.1999740600586" text="NAME" />
+                        <TableColumn fx:id="priceColumn" prefWidth="158.4000244140625" text="PRICE" />
+                        <TableColumn fx:id="stockColumn" prefWidth="164.80007934570312" text="STOCK" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="250.0" spacing="15.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-color: lightgray; -fx-border-radius: 10;">
+               <children>
+                  <Label text="Add Products">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameField" promptText="Product name" />
+                  <TextField fx:id="priceField" promptText="Price" />
+                  <TextField fx:id="stockField" promptText="Stock" />
+                  <Button fx:id="addBtn" alignment="CENTER" mnemonicParsing="false" prefWidth="210.0" text="Add Products" />
+                  <Button fx:id="clrBtn" alignment="CENTER" mnemonicParsing="false" prefWidth="210.0" text="Clear" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
