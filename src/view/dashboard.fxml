@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dashBoardController">
    <top>
       <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="8.0" style="-fx-background-color: #4E342E;" BorderPane.alignment="CENTER">
          <children>
@@ -61,7 +61,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" styleClass="sidebar-button" stylesheets="@style.css" text="Products">
+            <Button fx:id="productsBtn" mnemonicParsing="false" onAction="#openProducts" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" styleClass="sidebar-button" stylesheets="@style.css" text="Products">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
