@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -56,30 +58,57 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="220.0" spacing="15.0" style="-fx-background-color: #6F4E37; -fx-padding: 10;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" styleClass="sidebar-button" stylesheets="@style.css" text="Dashboard">
+            <Button fx:id="productsBtn" mnemonicParsing="false" onAction="#openProducts" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" text="Products">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@dashboard-btn.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="sidebar-button" />
+                  <String fx:value="dashboard-btn" />
+               </styleClass>
             </Button>
-            <Button fx:id="productsBtn" mnemonicParsing="false" onAction="#openProducts" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" styleClass="sidebar-button" stylesheets="@style.css" text="Products">
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" text="Orders">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@dashboard-btn.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="sidebar-button" />
+                  <String fx:value="dashboard-btn" />
+               </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" styleClass="sidebar-button" stylesheets="@style.css" text="Orders">
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" text="Sales">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@dashboard-btn.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="sidebar-button" />
+                  <String fx:value="dashboard-btn" />
+               </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" styleClass="sidebar-button" stylesheets="@style.css" text="Sales">
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" text="Logout">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" styleClass="sidebar-button" stylesheets="@style.css" text="Logout">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@dashboard-btn.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="sidebar-button" />
+                  <String fx:value="dashboard-btn" />
+               </styleClass>
             </Button>
          </children>
       </VBox>

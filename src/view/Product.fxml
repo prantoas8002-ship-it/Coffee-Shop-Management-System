@@ -8,25 +8,22 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0"
-            prefWidth="900.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.productController">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.productController">
 
    <top>
-      <HBox spacing="10"
-            style="-fx-background-color: #4B2E2B; -fx-padding: 20;">
+      <HBox spacing="10" style="-fx-background-color: #4B2E2B; -fx-padding: 20;">
          <children>
             <Label text="Products" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="28.0"/>
+                  <Font name="System Bold" size="28.0" />
                </font>
             </Label>
+            <Region prefHeight="40.0" prefWidth="579.0" />
+            <Button mnemonicParsing="false" onAction="#goToDashboard" prefHeight="39.0" prefWidth="126.0" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="← Dashboard" />
          </children>
       </HBox>
    </top>
@@ -36,7 +33,7 @@
       <HBox spacing="20">
 
          <padding>
-            <Insets top="20" right="20" bottom="20" left="20"/>
+            <Insets bottom="20" left="20" right="20" top="20" />
          </padding>
 
          <children>
@@ -45,33 +42,23 @@
 
                <children>
 
-                  <Label text="Products View">
+                  <Label text="Products Menu">
                      <font>
-                        <Font name="System Bold Italic" size="20.0"/>
+                        <Font name="System Bold Italic" size="20.0" />
                      </font>
                   </Label>
 
-                  <TableView fx:id="productTable"
-                             stylesheets="@products.css"
-                             VBox.vgrow="ALWAYS">
+                  <TableView fx:id="productTable" stylesheets="@products.css" VBox.vgrow="ALWAYS">
 
                      <columns>
 
-                        <TableColumn fx:id="slColumn"
-                                     text="SL"
-                                     prefWidth="60"/>
+                        <TableColumn fx:id="slColumn" prefWidth="60" text="SL" />
 
-                        <TableColumn fx:id="nameColumn"
-                                     text="NAME"
-                                     prefWidth="200"/>
+                        <TableColumn fx:id="nameColumn" prefWidth="200" text="NAME" />
 
-                        <TableColumn fx:id="priceColumn"
-                                     text="PRICE"
-                                     prefWidth="120"/>
+                        <TableColumn fx:id="priceColumn" prefWidth="120" text="PRICE" />
 
-                        <TableColumn fx:id="stockColumn"
-                                     text="STOCK"
-                                     prefWidth="120"/>
+                        <TableColumn fx:id="stockColumn" prefWidth="193.60000610351562" text="STOCK" />
 
                      </columns>
 
@@ -81,52 +68,29 @@
 
             </VBox>
 
-            <VBox prefWidth="260"
-                  minWidth="260"
-                  maxWidth="260"
-                  spacing="15"
-                  style="-fx-background-color: white;
-                             -fx-padding: 20;
-                             -fx-background-radius: 10;
-                             -fx-border-color: lightgray;
-                             -fx-border-radius: 10;">
+            <VBox maxWidth="260" minWidth="260" prefWidth="260" spacing="15" style="-fx-background-color: white;                              -fx-padding: 20;                              -fx-background-radius: 10;                              -fx-border-color: lightgray;                              -fx-border-radius: 10;">
 
                <children>
 
                   <Label text="Add Products">
                      <font>
-                        <Font name="System Bold" size="18"/>
+                        <Font name="System Bold" size="18" />
                      </font>
                   </Label>
 
-                  <TextField fx:id="nameField"
-                             promptText="Product Name"/>
+                  <TextField fx:id="nameField" promptText="Product Name" />
 
-                  <TextField fx:id="priceField"
-                             promptText="Price"/>
+                  <TextField fx:id="priceField" promptText="Price" />
 
-                  <TextField fx:id="stockField"
-                             promptText="Stock"/>
+                  <TextField fx:id="stockField" promptText="Stock" />
 
-                  <Button fx:id="addBtn"
-                          prefWidth="220"
-                          text="Add Product"
-                          onAction="#addProduct"/>
+                  <Button fx:id="addBtn" onAction="#addProduct" prefWidth="220" text="Add Product" />
 
-                  <Button fx:id="updateBtn"
-                          prefWidth="220"
-                          text="Update Product"
-                          onAction="#updateProduct"/>
+                  <Button fx:id="updateBtn" onAction="#updateProduct" prefWidth="220" text="Update Product" />
 
-                  <Button fx:id="dltBtn"
-                          prefWidth="220"
-                          text="Delete Product"
-                          onAction="#deleteProduct"/>
+                  <Button fx:id="dltBtn" onAction="#deleteProduct" prefWidth="220" text="Delete Product" />
 
-                  <Button fx:id="clrBtn"
-                          prefWidth="220"
-                          text="Clear"
-                          onAction="#clearFields"/>
+                  <Button fx:id="clrBtn" onAction="#clearFields" prefWidth="220" text="Clear" />
 
                </children>
 
