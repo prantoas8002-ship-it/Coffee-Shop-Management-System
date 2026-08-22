@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderController">
+
+    <!-- Top Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20; -fx-background-color: #4B2E2B;" styleClass="column-header" stylesheets="@products.css">
+
+            <children>
+
+                <Label fx:id="titleLabel" styleClass="page-title" text="Order Management" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font></Label>
+
+                <Region prefHeight="42.0" prefWidth="38.0" HBox.hgrow="ALWAYS" />
+
+                <TextField fx:id="searchField" prefHeight="39.0" prefWidth="246.0" promptText="Search Order..." />
+
+                <Button fx:id="refreshBtn" prefHeight="41.0" prefWidth="78.0" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="Refresh" />
+            <Button fx:id="dashboardBtn" prefHeight="41.0" prefWidth="121.0" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="← Dashboard" />
+
+            </children>
+
+        </HBox>
+    </top>
+
+    <!-- Center Section -->
+    <center>
+
+        <TableView fx:id="orderTable">
+
+            <columns>
+
+                <TableColumn fx:id="orderIdColumn" prefWidth="100" text="Order ID" />
+
+                <TableColumn fx:id="customerColumn" prefWidth="180" text="Customer" />
+
+                <TableColumn fx:id="productColumn" prefWidth="180" text="Product" />
+
+                <TableColumn fx:id="quantityColumn" prefWidth="100" text="Quantity" />
+
+                <TableColumn fx:id="totalColumn" prefWidth="120" text="Total" />
+
+                <TableColumn fx:id="statusColumn" prefWidth="150" text="Status" />
+
+            </columns>
+
+        </TableView>
+
+    </center>
+
+    <!-- Bottom Section -->
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 20;">
+
+            <children>
+
+                <Button fx:id="addOrderBtn" text="Add Order" />
+
+                <Button fx:id="updateOrderBtn" text="Update Order" />
+
+                <Button fx:id="deleteOrderBtn" text="Delete Order" />
+
+                <Button fx:id="completeOrderBtn" text="Complete Order" />
+
+            </children>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
