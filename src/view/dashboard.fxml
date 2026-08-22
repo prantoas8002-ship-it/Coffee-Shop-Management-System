@@ -71,7 +71,7 @@
                   <String fx:value="dashboard-btn" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" text="Orders">
+            <Button fx:id="orderBtn" mnemonicParsing="false" onAction="#openOrders" prefHeight="40.0" prefWidth="180.0" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-font-size: 24; -fx-alignment: CENTER_LEFT;" text="Orders">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

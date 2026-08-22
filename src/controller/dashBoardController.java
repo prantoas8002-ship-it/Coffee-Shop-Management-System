@@ -28,4 +28,18 @@ public class dashBoardController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void openOrders(ActionEvent event){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/orderPage.fxml"));
+
+            Parent root = loader.load();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

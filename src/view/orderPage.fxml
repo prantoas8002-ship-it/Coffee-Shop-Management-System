@@ -8,51 +8,56 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderController">
+<BorderPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.orderController">
 
-    <!-- Top Section -->
+    <!-- TOP -->
     <top>
-        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20; -fx-background-color: #4B2E2B;" styleClass="column-header" stylesheets="@products.css">
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20; -fx-background-color: #4B2E2B;">
 
             <children>
 
-                <Label fx:id="titleLabel" styleClass="page-title" text="Order Management" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="28.0" />
-               </font></Label>
+                <Label text="Order Management" textFill="WHITE">
 
-                <Region prefHeight="42.0" prefWidth="38.0" HBox.hgrow="ALWAYS" />
+                    <font>
+                        <Font name="System Bold" size="28" />
+                    </font>
 
-                <TextField fx:id="searchField" prefHeight="39.0" prefWidth="246.0" promptText="Search Order..." />
+                </Label>
 
-                <Button fx:id="refreshBtn" prefHeight="41.0" prefWidth="78.0" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="Refresh" />
-            <Button fx:id="dashboardBtn" prefHeight="41.0" prefWidth="121.0" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="← Dashboard" />
+                <Region HBox.hgrow="ALWAYS" />
+
+                <TextField fx:id="searchField" onKeyReleased="#searchOrder" prefWidth="250" promptText="Search Order..." />
+
+                <Button fx:id="refreshBtn" onAction="#refreshOrders" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="Refresh" />
+
+                <Button fx:id="dashboardBtn" onAction="#goToDashboard" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="← Dashboard" />
 
             </children>
 
         </HBox>
     </top>
 
-    <!-- Center Section -->
+    <!-- CENTER -->
     <center>
 
         <TableView fx:id="orderTable">
 
             <columns>
 
-                <TableColumn fx:id="orderIdColumn" prefWidth="100" text="Order ID" />
+                <TableColumn fx:id="serialColumn" prefWidth="100" text="SL" />
 
-                <TableColumn fx:id="customerColumn" prefWidth="180" text="Customer" />
+                <TableColumn fx:id="customerColumn" prefWidth="228.0" text="Customer" />
 
-                <TableColumn fx:id="productColumn" prefWidth="180" text="Product" />
+                <TableColumn fx:id="productColumn" prefWidth="173.60000610351562" text="Product" />
 
-                <TableColumn fx:id="quantityColumn" prefWidth="100" text="Quantity" />
+                <TableColumn fx:id="quantityColumn" prefWidth="156.79998779296875" text="Quantity" />
 
-                <TableColumn fx:id="totalColumn" prefWidth="120" text="Total" />
+                <TableColumn fx:id="totalColumn" prefWidth="172.53326416015625" text="Total" />
 
-                <TableColumn fx:id="statusColumn" prefWidth="150" text="Status" />
+                <TableColumn fx:id="statusColumn" prefWidth="169.333251953125" text="Status" />
 
             </columns>
 
@@ -60,24 +65,46 @@
 
     </center>
 
-    <!-- Bottom Section -->
+    <!-- BOTTOM -->
     <bottom>
 
-        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 20;">
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #4B2E2B;">
 
             <children>
 
-                <Button fx:id="addOrderBtn" text="Add Order" />
+                <HBox spacing="15">
 
-                <Button fx:id="updateOrderBtn" text="Update Order" />
+                    <children>
 
-                <Button fx:id="deleteOrderBtn" text="Delete Order" />
+                        <TextField fx:id="customerNameField" prefWidth="220" promptText="Customer Name" />
 
-                <Button fx:id="completeOrderBtn" text="Complete Order" />
+                        <TextField fx:id="productNameField" prefWidth="220" promptText="Product Name" />
+
+                        <TextField fx:id="quantityField" prefWidth="120" promptText="Quantity" />
+
+                    </children>
+
+                </HBox>
+
+                <HBox alignment="CENTER_RIGHT" spacing="15">
+
+                    <children>
+
+                        <Button fx:id="addOrderBtn" onAction="#addOrder" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="Add Order" />
+
+                        <Button fx:id="updateOrderBtn" onAction="#updateOrder" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="Update Order" />
+
+                        <Button fx:id="deleteOrderBtn" onAction="#deleteOrder" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="Delete Order" />
+
+                        <Button fx:id="completeOrderBtn" onAction="#completeOrder" styleClass="dashboard-btn" stylesheets="@dashboard-btn.css" text="Complete Order" />
+
+                    </children>
+
+                </HBox>
 
             </children>
 
-        </HBox>
+        </VBox>
 
     </bottom>
 
