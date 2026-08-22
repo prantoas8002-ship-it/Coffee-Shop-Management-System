@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.orderController">
+<BorderPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.orderController">
 
     <!-- TOP -->
     <top>
@@ -43,21 +43,21 @@
     <!-- CENTER -->
     <center>
 
-        <TableView fx:id="orderTable">
+        <TableView fx:id="orderTable" prefHeight="446.0" prefWidth="882.0">
 
             <columns>
 
-                <TableColumn fx:id="serialColumn" prefWidth="100" text="SL" />
+                <TableColumn fx:id="serialColumn" prefWidth="87.73336231708527" resizable="false" text="SL" />
 
-                <TableColumn fx:id="customerColumn" prefWidth="228.0" text="Customer" />
+                <TableColumn fx:id="customerColumn" prefWidth="151.46659088134766" resizable="false" text="Customer" />
 
-                <TableColumn fx:id="productColumn" prefWidth="173.60000610351562" text="Product" />
+                <TableColumn fx:id="productColumn" prefWidth="148.800048828125" resizable="false" text="Product" />
 
-                <TableColumn fx:id="quantityColumn" prefWidth="156.79998779296875" text="Quantity" />
+                <TableColumn fx:id="quantityColumn" prefWidth="61.5999755859375" resizable="false" text="Quantity" />
 
-                <TableColumn fx:id="totalColumn" prefWidth="172.53326416015625" text="Total" />
+                <TableColumn fx:id="totalColumn" minWidth="0.0" prefWidth="128.53341674804688" resizable="false" text="Total" />
 
-                <TableColumn fx:id="statusColumn" prefWidth="169.333251953125" text="Status" />
+                      <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="312.26654052734375" resizable="false" text="Status" />
 
             </columns>
 
